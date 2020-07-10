@@ -65,12 +65,9 @@ function init() {
     window.addEventListener( 'resize', onWindowResize, false );
 
     function onWindowResize(){
-
         camera.aspect = window.innerWidth / window.innerHeight;
         camera.updateProjectionMatrix();
-
         renderer.setSize( window.innerWidth, window.innerHeight );
-
     }
 }
 
@@ -107,13 +104,11 @@ function setRainVolume() {
 }
 
 function addEventListeners() {
-
     $(".hide-main-text").on('click', function(){
         $(".main-text").hide("slow", function() {
             console.log("text hidden")
         });
     })
-
 }
 
 $(document).ready(function(){

@@ -19,7 +19,6 @@ function init() {
     scene.fog = new THREE.FogExp2(0x11111f, 0.002);
     renderer.setClearColor(scene.fog.color);
     renderer.setSize(window.innerWidth, window.innerHeight);
-    console.log(document.getElementById("canvas-container"))
     document.getElementById("canvas-container").appendChild(renderer.domElement);
     rainGeo = new THREE.Geometry();
     for(let i=0;i<rainCount;i++) {
@@ -107,7 +106,18 @@ function setRainVolume() {
     audio.volume = 0.6;
 }
 
+function addEventListeners() {
+
+    $(".hide-main-text").on('click', function(){
+        $(".main-text").hide("slow", function() {
+            console.log("text hidden")
+        });
+    })
+
+}
+
 $(document).ready(function(){
+    addEventListeners();
     setRainVolume();
     init();
 })
